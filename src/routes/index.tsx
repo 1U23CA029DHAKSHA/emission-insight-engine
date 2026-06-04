@@ -1,29 +1,36 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Nav } from "@/components/carbon/Nav";
+import { Hero } from "@/components/carbon/Hero";
+import { Dashboard } from "@/components/carbon/Dashboard";
+import { Sources } from "@/components/carbon/Sources";
+import { Insights } from "@/components/carbon/Insights";
+import { Actions } from "@/components/carbon/Actions";
+import { Footer } from "@/components/carbon/Footer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "Verda — AI Carbon Emission Monitoring Agent" },
+      { name: "description", content: "An AI sustainability analyst that measures, explains, and reduces your company's carbon emissions across Scopes 1–3." },
+      { property: "og:title", content: "Verda — AI Carbon Emission Monitoring Agent" },
+      { property: "og:description", content: "Measure, analyze, and reduce your carbon footprint with an AI agent that thinks like a sustainability analyst." },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen">
+      <Nav />
+      <main>
+        <Hero />
+        <Dashboard />
+        <Sources />
+        <Insights />
+        <Actions />
+      </main>
+      <Footer />
     </div>
   );
 }
